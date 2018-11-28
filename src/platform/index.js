@@ -76,13 +76,38 @@ function User(database, parent_domain) {
     });
   }
 
+  function updateSpendingHistory(username, spendingHistory) {
+    Firebase.ref("spendingHistory/" + username).set(spendingHistory, error => {
+      if (error) {
+        alert(
+          "Something went when adding to firebase",
+          JSON.stringify(error, null, 2)
+        );
+      }
+    });
+  }
+
+  function getSpendingHistory(username) {
+    return new Promise((resolve, reject) => {
+      const spending = {};
+      Firebase.ref("spendingHistory/" + username).once("value", snapshot => {
+        snapshot.forEach(s => {
+          spending[s.key] = s.val();
+        });
+        resolve(spending);
+      });
+    });
+  }
+
   return {
     create,
     validate,
     updateBalances,
     getBalances,
     updateBudget,
-    getBudget
+    getBudget,
+    updateSpendingHistory,
+    getSpendingHistory
   };
 }
 

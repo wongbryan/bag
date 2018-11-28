@@ -93,8 +93,50 @@ class Home extends React.Component {
       });
       return percentages;
     })();
+    const locations = [
+      "Gushi Korean Barbeque - Westwood, CA",
+      "Subway - Westwood, CA",
+      "Urban Outfitters - Westwood, CA",
+      "Meatlove - Westwood, CA",
+      "Whole Foods - Westwood, CA",
+      "Flame Broiler - Westwood, CA",
+      "The Spot - Berkeley, CA",
+      "Kingpin Donuts - Berkeley, CA",
+      "Thai Noodle - Berkeley, CA",
+      "Asha Tea House - Berkeley, CA",
+      "Waba Grill - Walnut, CA",
+      "Bangkok BBQ - Walnut, CA",
+      "Bed Bath and Beyond - Walnut, CA",
+      "Cluck2Go - Walnut, CA",
+      "Man Chan Cuisine - Walnut, CA",
+      "Panda Express - Walnut, CA",
+      "Berkeley Bowl - Berkeley, CA",
+      "Steve's KBBQ - Berkeley, CA",
+      "Shandong Noodle - Oakland, CA",
+      "Dessert Time - Oakland, CA",
+      "YuGiOh Cafe - Oakland, CA",
+      "Hello Kitty cafe - Oakland, CA",
+      "Starbucks - Oakland, CA",
+      "Class 302 - Rowland Heights, CA",
+      "Yoshinoya - Rowland Heights, CA",
+      "Tea Bar - Rowland Heights, CA",
+      "Tastea - Rowland Heights, CA",
+      "Burger King - Rowland Heights, CA",
+      "McDonalds - Rowland Heights, CA"
+    ];
+    const spendingHistory = {};
+    for (let i = 0; i < 10; i++) {
+      const index = Math.floor(locations.length * Math.random());
+      const location = locations[index];
+      if (location != undefined) {
+        spendingHistory[location] = Math.floor(Math.random() * 50).toFixed(2);
+        locations.splice(index);
+      }
+    }
+    FirebaseModule().user.updateSpendingHistory(username, spendingHistory);
     FirebaseModule().user.updateBalances(username, balances);
     FirebaseModule().user.updateBudget(username, budget);
+    store.dispatch({ type: "updateSpendingHistory", payload: spendingHistory });
     store.dispatch({ type: "updateBalances", payload: balances });
     store.dispatch({ type: "updateBudget", payload: budget });
     this.attemptToNavigate(true);
@@ -117,6 +159,13 @@ class Home extends React.Component {
     if (isValid) {
       const budget = await FirebaseModule().user.getBudget(username);
       const balances = await FirebaseModule().user.getBalances(username);
+      const spendingHistory = await FirebaseModule().user.getSpendingHistory(
+        username
+      );
+      store.dispatch({
+        type: "updateSpendingHistory",
+        payload: spendingHistory
+      });
       store.dispatch({
         type: "updateBalances",
         payload: balances

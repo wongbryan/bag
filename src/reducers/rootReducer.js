@@ -44,13 +44,23 @@ const budget = (
   }
 };
 
+const spending = (state = {}, action) => {
+  switch (action.type) {
+    case "updateSpendingHistory":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   router: routerReducer, // react-router-redux
   action,
   applications,
   balances,
   user,
-  budget
+  budget,
+  spending
 });
 
 const actionSelector = state => ({

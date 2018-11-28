@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Row from "../components/Row";
 
 import styled from "@emotion/styled";
+import { store } from "../reducers/store";
 
 const SpendingContainer = styled("div")`
   width: 80%;
@@ -22,29 +23,15 @@ class Spending extends React.Component {
   }
 
   componentDidMount() {
+    const history = store.getState().spending;
+    const data = Object.keys(history).map(key => {
+      return {
+        left: key,
+        right: "$" + history[key].toString()
+      };
+    });
     this.setState({
-      spending: [
-        {
-          left: "Gushi Korean Barbeque - Westwood, CA",
-          right: "$10.00"
-        },
-        {
-          left: "Subway - Westwood, CA",
-          right: "$15.99"
-        },
-        {
-          left: "Urban Outfitters - Westwood, CA",
-          right: "$3.00"
-        },
-        {
-          left: "Meatlove - Westwood, CA",
-          right: "$2.73"
-        },
-        {
-          left: "Whole Foods - Westwood, CA",
-          right: "$1287.01"
-        }
-      ]
+      spending: data
     });
   }
 

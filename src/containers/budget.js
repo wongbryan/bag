@@ -36,22 +36,22 @@ class Budget extends React.Component {
           labels={true}
           data={[
             {
-              key: "Food " + data.food.toString(),
+              key: "Food " + data.food.toFixed(2).toString() + "%",
               value: data.food,
               color: "#FFD154"
             },
             {
-              key: "Travel " + data.travel.toString(),
+              key: "Travel " + data.travel.toFixed(2).toString() + "%",
               value: data.travel,
               color: "#FFA987"
             },
             {
-              key: "Gas " + data.gas.toString(),
+              key: "Gas " + data.gas.toFixed(2).toString() + "%",
               value: data.gas,
               color: "#87D0F2"
             },
             {
-              key: "Clothing " + data.clothing.toString(),
+              key: "Clothing " + data.clothing.toFixed(2).toString() + "%",
               value: data.clothing,
               color: "#FFD3F2"
             }
@@ -64,8 +64,8 @@ class Budget extends React.Component {
           }}
         />
         <p style={{ textAlign: "center" }}>
-          Insights: You spent {data.food.toString()} of your monthly income on
-          food.
+          Insights: You spent {data.food.toFixed(2).toString() + "%"} of your
+          monthly income on food.
         </p>
         <Link to="/spending" style={linkStyling}>
           <h3 className="navbar-link blue" style={{ textAlign: "center" }}>

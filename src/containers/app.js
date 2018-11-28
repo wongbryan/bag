@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import { Switch } from "connected-react-router";
 
 import Home from "./home";
 import Budget from "./budget";
