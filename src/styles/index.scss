@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@import "../components/Button/style.scss";
+@import "../components/ProjectsOverlay/style.scss";
+@import "../components/LoadingScreen/style.scss";
+@import "../components/ApplyProjectMember/style.scss";
+@import "../components/Card/style.scss";
+@import "../components/Header/style.scss";
+@import "../components/SuccessScreen/style.scss";
+@import "../components/FailedScreen/style.scss";
+@import "../components/Project/style.scss";
+@import "../components/Row/style.scss";
+@import "../components/FormItem/style.scss";
+@import "../components/Form/style.scss";
+@import "../components/Grid/style.scss";
+@import "../components/NavBar/style.scss";
+@import "../fonts/sentinel-web/stylesheet.css";
+@import "../fonts/untitled-sans-web/stylesheet.css";
+@import "../fonts/fonts.scss";
+@import "./colors.scss";
+
+.main-content {
+  padding: 30px;
+  background-color: $white;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  border: 25px solid $blue;
+  overflow-x: hidden;
+}
+
+.apply-puzzle {
+  position: fixed;
+  height: 600px;
+  top: 0;
+  right: 0;
+  transform: translate(100px, -225px);
+  z-index: 0;
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.apply-main {
+  z-index: 5;
+  position: relative;
+  padding-top: 100px;
+}
+
+.project-quarters {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.project-quarter {
+  font-size: 2rem;
+}
+
+.landing-container {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}

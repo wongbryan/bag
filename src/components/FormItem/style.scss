@@ -1,0 +1,30 @@
+@import "../../styles/colors.scss";
+@import "../../fonts/fonts.scss";
+
+.click:hover {
+  cursor: pointer;
+}
+
+.text-underline {
+  border-bottom: 0.5px $lightgray solid !important;
+}
+
+.app-submit-button {
+  margin-top: 0px;
+  font-size: 1.3rem;
+}
+
+.form-dropdown {
+  margin-top: 10px;
+}
+
+.form-item-container {
+  margin-bottom: 50px;
+  @media only screen and (max-width: 600px) {
+    max-width: 50%;
+  }
+}
+
+.required-msg {
+  font-size: 0.8rem;
+}

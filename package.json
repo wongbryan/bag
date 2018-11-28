@@ -3,8 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.0",
+    "@emotion/styled": "^10.0.0",
+    "babel-polyfill": "^6.26.0",
+    "emotion": "^10.0.0",
+    "history": "^4.7.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-easy-chart": "^1.0.0",
+    "react-emotion": "^10.0.0",
+    "react-redux": "^5.1.1",
     "react-scripts": "2.1.1"
   },
   "scripts": {
@@ -21,5 +29,14 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "connected-react-router": "^5.0.1",
+    "firebase": "^5.5.9",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-select": "^2.1.2",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  }
 }

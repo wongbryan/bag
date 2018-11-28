@@ -1,0 +1,40 @@
+@import "../../styles/colors.scss";
+
+.projects-overlay {
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100%;
+  overflow: scroll;
+  // stuff for overflow scrolling
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 13, 23, 0.9);
+  padding-left: 200px;
+  @media only screen and (max-width: 600px) {
+    padding-left: 30px;
+  }
+  display: flex;
+  align-items: center;
+}
+
+.projects-overlay-back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 30px;
+  font-size: 2rem;
+  color: $lightgray;
+  &:hover {
+    color: $white;
+  }
+
+  &::before {
+    display: none;
+  }
+}
+
+.projects-list {
+  white-space: nowrap;
+}
