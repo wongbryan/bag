@@ -99,6 +99,49 @@ function User(database, parent_domain) {
     });
   }
 
+  
+  function updateDetails(username, accountNumber, routingNumber) {
+    Firebase.ref("accountNumber/" + username).set(accountNumber, error => {
+      if (error) {
+        alert(
+          "Something went when adding to firebase",
+          JSON.stringify(error, null, 2)
+        );
+      }
+    });
+    Firebase.ref("routingNumber/" + username).set(routingNumber, error => {
+      if (error) {
+        alert(
+          "Something went when adding to firebase",
+          JSON.stringify(error, null, 2)
+        );
+      }
+    });
+  }
+
+  function getAccountNumber(username){
+    return new Promise((resolve, reject) => {
+      const accountNumber = "";
+      Firebase.ref("accountNumber/" + username).once("value", snapshot => {
+	accountNumber = snapshot;
+        resolve(accountNumber);
+      });
+    });
+  }
+
+
+  function getRoutingNumber(username){
+    return new Promise((resolve, reject) => {
+      const routingNumber = "";
+      Firebase.ref("routingNumber/" + username).once("value", snapshot => {
+        routingNumber = snapshot;
+        resolve(routingNumber);
+      });
+    });
+  }
+	
+
+
   return {
     create,
     validate,
@@ -107,7 +150,10 @@ function User(database, parent_domain) {
     updateBudget,
     getBudget,
     updateSpendingHistory,
-    getSpendingHistory
+    getSpendingHistory,
+    updateDetails,
+    getAccountNumber,
+	  getRoutingNumber
   };
 }
 

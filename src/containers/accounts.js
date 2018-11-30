@@ -3,7 +3,7 @@ import { push } from "react-router-redux";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Row from "../components/Row";
-
+import Input from "../components/Input";
 import styled from "@emotion/styled";
 import FirebaseModule from "../platform";
 
@@ -72,7 +72,12 @@ class Accounts extends React.Component {
 
           <div class="modal-content">
             <span class="close" id="closeModalAccounts">&times;</span>
-            <p>Manage your account</p>
+            <h2>Manage your account</h2>
+            <h3>Routing Number</h3>
+	    <p>292398471028</p>
+	    <h3>Account Number</h3>
+	    <p>A7d8Ad6276188</p>
+ 
           </div>
 
         </div>

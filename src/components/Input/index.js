@@ -26,7 +26,9 @@ class Input extends React.Component {
 
   liftInput(e) {
     const { onChange } = this.props;
-    onChange(e.target.value);
+    if (onChange) {
+      onChange(e.target.value);
+    }
   }
 
   render() {
