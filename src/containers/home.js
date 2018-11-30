@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import Input from "../components/Input";
+import Button from "../components/Button";
 import { withRouter } from "react-router-dom";
 
 import FirebaseModule from "../platform";
@@ -65,6 +66,7 @@ class Home extends React.Component {
     this.login = this.login.bind(this);
     this.createUser = this.createUser.bind(this);
     this.attemptToNavigate = this.attemptToNavigate.bind(this);
+    this.logout = this.logout.bind(this);
     this.generateAccountNumber = this.generateAccountNumber.bind(this);
     this.generateRoutingNumber = this.generateRoutingNumber.bind(this);
   }
@@ -222,11 +224,21 @@ class Home extends React.Component {
     });
   }
 
+  logout() {
+    store.dispatch({
+      type: "logout"
+    });
+    this.forceUpdate();
+  }
+
   render() {
     const { error } = this.state;
     const { loggedIn } = store.getState().user;
     return loggedIn ? (
-      <Title className="sentinel-primary black">You are logged in.</Title>
+      <div>
+        <Title className="sentinel-primary black">You are logged in.</Title>
+        <Button label="Log out" color="primary" onClick={this.logout} />
+      </div>
     ) : (
       <Div className="landing-container">
         <Title className="sentinel-primary black">

@@ -21,14 +21,14 @@ class NavBar extends React.Component {
         </div>
         {store.getState().user.loggedIn ? (
           <div className="navbar-links">
-            <Link to="/accounts" style={linkStyling}>
-              <div className="untitled-primary lightgray navbar-link">
-                Account Details
-              </div>
-            </Link>
             <Link to="/budget" style={linkStyling}>
               <div className="untitled-primary lightgray navbar-link">
                 Budget
+              </div>
+            </Link>
+            <Link to="/accounts" style={linkStyling}>
+              <div className="untitled-primary lightgray navbar-link">
+                Account Details
               </div>
             </Link>
             <Link to="/spending" style={linkStyling}>
