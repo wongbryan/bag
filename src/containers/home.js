@@ -158,9 +158,6 @@ class Home extends React.Component {
     this.attemptToNavigate(true);
   }
 
-  generateRoutingNumber() {}
-
-  generateAccountNumber() {}
   async login() {
     const { username, password } = this.state;
     const isValid = await FirebaseModule().user.validate(username, password);
