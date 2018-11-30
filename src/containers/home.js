@@ -135,12 +135,15 @@ class Home extends React.Component {
         locations.splice(index);
       }
     }
+
     FirebaseModule().user.updateSpendingHistory(username, spendingHistory);
     FirebaseModule().user.updateBalances(username, balances);
     FirebaseModule().user.updateBudget(username, budget);
+    FirebaseModule().user.updateDetails(username, this.generateAccountNumber(), this.generateRoutingNumber());
     store.dispatch({ type: "updateSpendingHistory", payload: spendingHistory });
     store.dispatch({ type: "updateBalances", payload: balances });
     store.dispatch({ type: "updateBudget", payload: budget });
+    // store.dispatch({ type: "updateDetails", })
     this.attemptToNavigate(true);
   }
 
