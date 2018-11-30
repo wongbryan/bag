@@ -1,14 +1,14 @@
 {
   "main.css": "/bag/static/css/main.7ebc1891.chunk.css",
-  "main.js": "/bag/static/js/main.1a82202d.chunk.js",
-  "main.js.map": "/bag/static/js/main.1a82202d.chunk.js.map",
-  "static/js/1.687124de.chunk.js": "/bag/static/js/1.687124de.chunk.js",
-  "static/js/1.687124de.chunk.js.map": "/bag/static/js/1.687124de.chunk.js.map",
+  "main.js": "/bag/static/js/main.f0cc2e7e.chunk.js",
+  "main.js.map": "/bag/static/js/main.f0cc2e7e.chunk.js.map",
+  "static/js/1.e98e1074.chunk.js": "/bag/static/js/1.e98e1074.chunk.js",
+  "static/js/1.e98e1074.chunk.js.map": "/bag/static/js/1.e98e1074.chunk.js.map",
   "runtime~main.js": "/bag/static/js/runtime~main.fbf0aa13.js",
   "runtime~main.js.map": "/bag/static/js/runtime~main.fbf0aa13.js.map",
-  "static/media/index.css": "/bag/static/media/Sentinel-SemiboldItalic.3c4b5c08.woff",
+  "static/media/index.css": "/bag/static/media/UntitledSans-BlackItalic.04a2359b.woff2",
   "static/css/main.7ebc1891.chunk.css.map": "/bag/static/css/main.7ebc1891.chunk.css.map",
   "index.html": "/bag/index.html",
-  "precache-manifest.a9793bb48ff21ed79b25136358192b11.js": "/bag/precache-manifest.a9793bb48ff21ed79b25136358192b11.js",
+  "precache-manifest.cf17f681548e890db9b4b19362214d3b.js": "/bag/precache-manifest.cf17f681548e890db9b4b19362214d3b.js",
   "service-worker.js": "/bag/service-worker.js"
 }
