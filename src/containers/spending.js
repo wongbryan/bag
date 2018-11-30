@@ -39,7 +39,6 @@ class Spending extends React.Component {
     return (
       <div>
         <SpendingContainer className="landing-container">
-          
           {this.state.spending.map(transaction => {
             return (
               <Row
@@ -55,12 +54,12 @@ class Spending extends React.Component {
           })}
         </SpendingContainer>
         <div id="detailsModal" class="modal">
-
-          <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <p>Transaction details</p>
+          <div className="modal-content">
+            <span className="close" id="closeModal">
+              &times;
+            </span>
+            <h2>Transaction details</h2>
           </div>
-
         </div>
       </div>
     );
