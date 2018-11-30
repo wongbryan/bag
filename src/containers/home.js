@@ -67,6 +67,20 @@ class Home extends React.Component {
     this.createUser = this.createUser.bind(this);
     this.attemptToNavigate = this.attemptToNavigate.bind(this);
     this.logout = this.logout.bind(this);
+    this.generateAccountNumber = this.generateAccountNumber.bind(this);
+    this.generateRoutingNumber = this.generateRoutingNumber.bind(this);
+  }
+
+  generateRoutingNumber() {
+    return Math.random()
+      .toString()
+      .slice(2, 11);
+  }
+
+  generateAccountNumber() {
+    return Math.random()
+      .toString()
+      .slice(2, 15);
   }
 
   createUser() {
