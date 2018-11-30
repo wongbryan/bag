@@ -153,11 +153,14 @@ class Home extends React.Component {
     FirebaseModule().user.updateSpendingHistory(username, spendingHistory);
     FirebaseModule().user.updateBalances(username, balances);
     FirebaseModule().user.updateBudget(username, budget);
-    FirebaseModule().user.updateDetails(username, this.generateAccountNumber(), this.generateRoutingNumber());
+    const accountNumber = this.generateAccountNumber();
+    const routingNumber = this.generateRoutingNumber();
+    FirebaseModule().user.updateDetails(username, accountNumber, routingNumber);
     store.dispatch({ type: "updateSpendingHistory", payload: spendingHistory });
     store.dispatch({ type: "updateBalances", payload: balances });
     store.dispatch({ type: "updateBudget", payload: budget });
-    // store.dispatch({ type: "updateDetails", })
+    store.dispatch({ type: "updateAccountNumber", payload: accountNumber });
+    store.dispatch({ type: "updateRoutingNumber", payload: routingNumber });
     this.attemptToNavigate(true);
   }
 
@@ -181,6 +184,9 @@ class Home extends React.Component {
       const spendingHistory = await FirebaseModule().user.getSpendingHistory(
         username
       );
+      const accountNumber = await FirebaseModule().user.getAccountNumber(
+        username);
+      const routingNumber = await FirebaseModule().user.getRoutingNumber(username);
       store.dispatch({
         type: "updateSpendingHistory",
         payload: spendingHistory
@@ -198,6 +204,14 @@ class Home extends React.Component {
         payload: {
           username
         }
+      });
+      store.dispatch({
+        type: "updateAccountNumber",
+        payload: accountNumber
+      });
+      store.dispatch({
+        type: "updateRoutingNumber",
+        payload: routingNumber
       });
     }
 
