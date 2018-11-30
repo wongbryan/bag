@@ -99,7 +99,6 @@ function User(database, parent_domain) {
     });
   }
 
-  
   function updateDetails(username, accountNumber, routingNumber) {
     Firebase.ref("accountNumber/" + username).set(accountNumber, error => {
       if (error) {
@@ -119,28 +118,25 @@ function User(database, parent_domain) {
     });
   }
 
-  function getAccountNumber(username){
+  function getAccountNumber(username) {
     return new Promise((resolve, reject) => {
-      const accountNumber = "";
+      let accountNumber = "";
       Firebase.ref("accountNumber/" + username).once("value", snapshot => {
-	accountNumber = snapshot;
+        accountNumber = snapshot.val();
         resolve(accountNumber);
       });
     });
   }
 
-
-  function getRoutingNumber(username){
+  function getRoutingNumber(username) {
     return new Promise((resolve, reject) => {
-      const routingNumber = "";
+      let routingNumber = "";
       Firebase.ref("routingNumber/" + username).once("value", snapshot => {
-        routingNumber = snapshot;
+        routingNumber = snapshot.val();
         resolve(routingNumber);
       });
     });
   }
-	
-
 
   return {
     create,
@@ -153,7 +149,7 @@ function User(database, parent_domain) {
     getSpendingHistory,
     updateDetails,
     getAccountNumber,
-	  getRoutingNumber
+    getRoutingNumber
   };
 }
 

@@ -185,8 +185,11 @@ class Home extends React.Component {
         username
       );
       const accountNumber = await FirebaseModule().user.getAccountNumber(
-        username);
-      const routingNumber = await FirebaseModule().user.getRoutingNumber(username);
+        username
+      );
+      const routingNumber = await FirebaseModule().user.getRoutingNumber(
+        username
+      );
       store.dispatch({
         type: "updateSpendingHistory",
         payload: spendingHistory

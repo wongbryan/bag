@@ -58,6 +58,24 @@ const spending = (state = {}, action) => {
   }
 };
 
+const accountNumber = (state = {}, action) => {
+  switch (action.type) {
+    case "updateAccountNumber":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+const routingNumber = (state = {}, action) => {
+  switch (action.type) {
+    case "updateRoutingNumber":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   router: routerReducer, // react-router-redux
   action,
@@ -65,7 +83,9 @@ export default combineReducers({
   balances,
   user,
   budget,
-  spending
+  spending,
+  accountNumber,
+  routingNumber
 });
 
 const actionSelector = state => ({

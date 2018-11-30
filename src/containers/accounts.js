@@ -20,7 +20,9 @@ class Accounts extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      accounts: []
+      accounts: [],
+      accountNumber: "",
+      routingNumber: ""
     };
   }
 
@@ -47,13 +49,20 @@ class Accounts extends React.Component {
           ]
         });
       });
+
+    const routingNumber = store.getState().routingNumber;
+    console.log(routingNumber);
+    const accountNumber = store.getState().accountNumber;
+    this.setState({
+      accountNumber,
+      routingNumber
+    });
   }
 
   render() {
     return (
       <div>
         <AccountsContainer className="landing-container">
-          
           {this.state.accounts.map(transaction => {
             return (
               <Row
@@ -68,18 +77,17 @@ class Accounts extends React.Component {
             );
           })}
         </AccountsContainer>
-        <div id="accountsModal" class="modal">
-
-          <div class="modal-content">
-            <span class="close" id="closeModalAccounts">&times;</span>
+        <div id="accountsModal" className="modal">
+          <div className="modal-content">
+            <span className="close" id="closeModalAccounts">
+              &times;
+            </span>
             <h2>Manage your account</h2>
             <h3>Routing Number</h3>
-	    <p>292398471028</p>
-	    <h3>Account Number</h3>
-	    <p>A7d8Ad6276188</p>
- 
+            <p>{this.state.routingNumber}</p>
+            <h3>Account Number</h3>
+            <p>{this.state.accountNumber}</p>
           </div>
-
         </div>
       </div>
     );
