@@ -65,6 +65,20 @@ class Home extends React.Component {
     this.login = this.login.bind(this);
     this.createUser = this.createUser.bind(this);
     this.attemptToNavigate = this.attemptToNavigate.bind(this);
+    this.generateAccountNumber = this.generateAccountNumber.bind(this);
+    this.generateRoutingNumber = this.generateRoutingNumber.bind(this);
+  }
+
+  generateRoutingNumber() {
+    return Math.random()
+      .toString()
+      .slice(2, 11);
+  }
+
+  generateAccountNumber() {
+    return Math.random()
+      .toString()
+      .slice(2, 15);
   }
 
   createUser() {
@@ -142,6 +156,9 @@ class Home extends React.Component {
     this.attemptToNavigate(true);
   }
 
+  generateRoutingNumber() {}
+
+  generateAccountNumber() {}
   async login() {
     const { username, password } = this.state;
     const isValid = await FirebaseModule().user.validate(username, password);
