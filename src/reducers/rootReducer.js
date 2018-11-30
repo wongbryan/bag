@@ -27,6 +27,11 @@ const user = (state = { loggedIn: false, username: "" }, action) => {
         loggedIn: true,
         username: action.payload.username
       };
+    case "logout":
+      return {
+        loggedIn: false,
+        username: ""
+      };
     default:
       return state;
   }
