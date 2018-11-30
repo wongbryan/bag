@@ -37,21 +37,32 @@ class Spending extends React.Component {
 
   render() {
     return (
-      <SpendingContainer className="landing-container">
-        <h2>Transaction History</h2>
-        {this.state.spending.map(transaction => {
-          return (
-            <Row
-              key={transaction.left}
-              background="lightgray-bg"
-              fixed
-              right={transaction.right}
-            >
-              {transaction.left}
-            </Row>
-          );
-        })}
-      </SpendingContainer>
+      <div>
+        <SpendingContainer className="landing-container">
+          
+          {this.state.spending.map(transaction => {
+            return (
+              <Row
+                key={transaction.left}
+                background="lightblue-bg"
+                fixed
+                transaction
+                right={transaction.right}
+              >
+                {transaction.left}
+              </Row>
+            );
+          })}
+        </SpendingContainer>
+        <div id="detailsModal" class="modal">
+
+          <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <p>Transaction details</p>
+          </div>
+
+        </div>
+      </div>
     );
   }
 }

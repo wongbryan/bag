@@ -31,8 +31,9 @@ class Budget extends React.Component {
     const data = store.getState().budget;
     return (
       <div className="landing-container">
-        <h2>Budget</h2>
+        
         <PieChart
+          size={300}
           labels={true}
           data={[
             {
