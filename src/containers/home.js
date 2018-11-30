@@ -87,7 +87,7 @@ class Home extends React.Component {
       const percentages = {};
       const categories = ["food", "gas", "travel", "clothing"];
       categories.forEach(key => {
-        const inc = Math.random() * percent;
+        const inc = Math.random() * percent + 20;
         percent = inc < 0 ? 0 : percent - inc;
         percentages[key] = inc;
       });

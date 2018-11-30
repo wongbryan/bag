@@ -51,22 +51,32 @@ class Accounts extends React.Component {
 
   render() {
     return (
-      <AccountsContainer className="landing-container">
-        <h2>Accounts</h2>
-        {this.state.accounts.map(transaction => {
-          return (
-            <Row
-              key={transaction.left}
-              background="lightgray-bg"
-              fixed
-              large
-              right={transaction.right}
-            >
-              {transaction.left}
-            </Row>
-          );
-        })}
-      </AccountsContainer>
+      <div>
+        <AccountsContainer className="landing-container">
+          
+          {this.state.accounts.map(transaction => {
+            return (
+              <Row
+                key={transaction.left}
+                background="lightblue-bg"
+                fixed
+                large
+                right={transaction.right}
+              >
+                {transaction.left}
+              </Row>
+            );
+          })}
+        </AccountsContainer>
+        <div id="accountsModal" class="modal">
+
+          <div class="modal-content">
+            <span class="close" id="closeModalAccounts">&times;</span>
+            <p>Manage your account</p>
+          </div>
+
+        </div>
+      </div>
     );
   }
 }
