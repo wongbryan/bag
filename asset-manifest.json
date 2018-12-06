@@ -1,14 +1,14 @@
 {
-  "main.css": "/bag/static/css/main.772c44ac.chunk.css",
-  "main.js": "/bag/static/js/main.8d0ad5de.chunk.js",
-  "main.js.map": "/bag/static/js/main.8d0ad5de.chunk.js.map",
-  "static/js/1.1da211e0.chunk.js": "/bag/static/js/1.1da211e0.chunk.js",
-  "static/js/1.1da211e0.chunk.js.map": "/bag/static/js/1.1da211e0.chunk.js.map",
+  "main.css": "/bag/static/css/main.003afddd.chunk.css",
+  "main.js": "/bag/static/js/main.18e75dc1.chunk.js",
+  "main.js.map": "/bag/static/js/main.18e75dc1.chunk.js.map",
+  "static/js/1.057ee09a.chunk.js": "/bag/static/js/1.057ee09a.chunk.js",
+  "static/js/1.057ee09a.chunk.js.map": "/bag/static/js/1.057ee09a.chunk.js.map",
   "runtime~main.js": "/bag/static/js/runtime~main.fbf0aa13.js",
   "runtime~main.js.map": "/bag/static/js/runtime~main.fbf0aa13.js.map",
-  "static/media/index.css": "/bag/static/media/UntitledSans-BlackItalic.04a2359b.woff2",
-  "static/css/main.772c44ac.chunk.css.map": "/bag/static/css/main.772c44ac.chunk.css.map",
+  "static/media/index.css": "/bag/static/media/UntitledSans-BlackItalic.57652e69.woff",
+  "static/css/main.003afddd.chunk.css.map": "/bag/static/css/main.003afddd.chunk.css.map",
   "index.html": "/bag/index.html",
-  "precache-manifest.34c45a718d10db3e4ece178174d9ae10.js": "/bag/precache-manifest.34c45a718d10db3e4ece178174d9ae10.js",
+  "precache-manifest.902d257bf5eeb01c2025d8800948e0e5.js": "/bag/precache-manifest.902d257bf5eeb01c2025d8800948e0e5.js",
   "service-worker.js": "/bag/service-worker.js"
 }
