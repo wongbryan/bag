@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 import styled from "@emotion/styled";
 
+import Header from "../components/Header";
+import { Line } from "rc-progress";
 import { PieChart } from "react-easy-chart";
 import { store } from "../reducers/store";
 
@@ -31,7 +33,25 @@ class Budget extends React.Component {
     const data = store.getState().budget;
     return (
       <div className="landing-container">
-        
+        <div className="goals">
+          {store.getState().goals.map(goal => (
+            <div key={goal} style={{ marginBottom: "50px" }}>
+              <h2 className="sentinel-secondary">
+                {"Budget remaining for " + goal + " this month:"}
+              </h2>
+              <Line
+                percent={data[goal].toFixed(2).toString()}
+                strokeWidth="2"
+                strokeColor="#478af5"
+              />
+              <h3 className="untitled-secondary" style={{ marginRight: "0" }}>
+                {"$" +
+                  ((data[goal].toFixed(2) / 100) * 300).toFixed(0).toString() +
+                  " / $300"}
+              </h3>
+            </div>
+          ))}
+        </div>
         <PieChart
           size={300}
           labels={true}

@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import Home from "./home";
 import Budget from "./budget";
+import Goals from "./goals";
 import Spending from "./spending";
 import Accounts from "./accounts";
 import Interest from "./interest";
@@ -13,6 +14,7 @@ const App = () => (
     <div className="main-content">
       <NavBar />
       <Route exact path="/" component={Home} />
+      <Route exact path="/goals" component={Goals} />
       <Route exact path="/budget" component={Budget} />
       <Route exact path="/spending" component={Spending} />
       <Route exact path="/accounts" component={Accounts} />

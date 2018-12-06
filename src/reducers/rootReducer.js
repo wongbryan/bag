@@ -37,6 +37,29 @@ const user = (state = { loggedIn: false, username: "" }, action) => {
   }
 };
 
+const goals = (state = [], action) => {
+  switch (action.type) {
+    case "addGoal": {
+      const newState = [...state];
+      if (newState.indexOf(action.payload) == -1) {
+        newState.push(action.payload);
+      }
+      return newState;
+    }
+    case "addGoals": {
+      const newState = [...state];
+      action.payload.forEach(goal => {
+        if (newState.indexOf(goal) == -1) {
+          newState.push(goal);
+        }
+      });
+      return newState;
+    }
+    default:
+      return state;
+  }
+};
+
 const budget = (
   state = { food: 25, gas: 25, travel: 25, clothing: 25 },
   action
@@ -83,6 +106,7 @@ export default combineReducers({
   balances,
   user,
   budget,
+  goals,
   spending,
   accountNumber,
   routingNumber

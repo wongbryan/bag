@@ -30,6 +30,29 @@ function User(database, parent_domain) {
     return isValid;
   }
 
+  function addGoal(username, goal) {
+    Firebase.ref("goals/" + username).push(goal, error => {
+      if (error) {
+        alert(
+          "Something went when adding to firebase",
+          JSON.stringify(error, null, 2)
+        );
+      }
+    });
+  }
+
+  function getGoals(username) {
+    const goals = [];
+    return new Promise((resolve, reject) => {
+      Firebase.ref("goals/" + username).once("value", snapshot => {
+        snapshot.forEach(s => {
+          goals.push(s.val());
+        });
+        resolve(goals);
+      });
+    });
+  }
+
   function updateBalances(username, balances) {
     Firebase.ref("balances/" + username).set(balances, error => {
       if (error) {
@@ -149,7 +172,9 @@ function User(database, parent_domain) {
     getSpendingHistory,
     updateDetails,
     getAccountNumber,
-    getRoutingNumber
+    getRoutingNumber,
+    addGoal,
+    getGoals
   };
 }
 

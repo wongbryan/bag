@@ -181,6 +181,7 @@ class Home extends React.Component {
     if (isValid) {
       const budget = await FirebaseModule().user.getBudget(username);
       const balances = await FirebaseModule().user.getBalances(username);
+      const goals = await FirebaseModule().user.getGoals(username);
       const spendingHistory = await FirebaseModule().user.getSpendingHistory(
         username
       );
@@ -190,6 +191,10 @@ class Home extends React.Component {
       const routingNumber = await FirebaseModule().user.getRoutingNumber(
         username
       );
+      store.dispatch({
+        type: "addGoals",
+        payload: goals
+      });
       store.dispatch({
         type: "updateSpendingHistory",
         payload: spendingHistory

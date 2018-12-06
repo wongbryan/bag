@@ -36,6 +36,11 @@ class NavBar extends React.Component {
                 Transaction History
               </div>
             </Link>
+            <Link to="/goals" style={linkStyling}>
+              <div className="untitled-primary lightgray navbar-link">
+                Goals
+              </div>
+            </Link>
           </div>
         ) : null}
       </div>
