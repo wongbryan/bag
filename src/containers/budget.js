@@ -32,7 +32,7 @@ class Budget extends React.Component {
     };
     const data = store.getState().budget;
     return (
-      <div className="landing-container">
+      <div style={{ marginTop: "50px", margin: "auto", padding: "30px" }}>
         <div className="goals">
           {store.getState().goals.map(goal => (
             <div key={goal} style={{ marginBottom: "50px" }}>
@@ -53,7 +53,7 @@ class Budget extends React.Component {
           ))}
         </div>
         <PieChart
-          size={300}
+          size={250}
           labels={true}
           data={[
             {
